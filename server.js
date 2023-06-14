@@ -1,6 +1,8 @@
 const  express =require('express');
 
 const apps = express();
+require('dotenv').config();
+const PORT = process.env.PORT || 2000;
 
 apps.get("/",(req,res)=>{
     res.send("hi1111111");
@@ -16,8 +18,8 @@ apps.get("/contact",(req,res)=>{
 
 
 
-apps.listen(5000,()=>{
-   console.log("started");
+apps.listen(PORT,()=>{
+   console.log(`started: ${PORT}`);
 
 })
 
